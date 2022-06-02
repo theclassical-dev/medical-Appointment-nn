@@ -104,6 +104,11 @@
                         <span>DASHBOARD</span>  </a>
 					</li>
 					<li>
+						<a href="{{ route('admin.analysis') }}" title="">
+                       <i class="fa fa-dashboard"><span class="path1"></span><span class="path2"></span></i>
+                        <span>DATA ANALYTICS</span></a>
+					</li>
+					<li>
 						<a href="{{ route('admin.attendance') }}" title="">
                        <i class="fa fa-dashboard"><span class="path1"></span><span class="path2"></span></i>
                         <span>ATTENDANCE</span></a>

@@ -378,4 +378,19 @@ class AdminController extends Controller
 
         return view('admin/upload');
     }
+
+    public function analysis(Request $request){
+
+        // active
+        $total =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' ORDER BY id");
+        $aMale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' AND Sex = 'M' ORDER BY id");
+        $aFemale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' AND Sex = 'F' ORDER BY id");
+        
+        //inactive
+        $inactive =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' ORDER BY id");
+        $inMale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' AND Sex = 'M' ORDER BY id");
+        $inFemale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' AND Sex = 'F' ORDER BY id");
+
+        return view('admin/analysis', compact('total', 'aMale', 'aFemale', 'inMale', 'inFemale', 'inactive'));
+    }
 }
