@@ -24,7 +24,7 @@
 						</thead>
 						<tbody>
 							@php
-                                $q = DB::select("SELECT * FROM attendances WHERE flag = 1 ORDER BY id");
+                                $q = DB::select("SELECT * FROM attendances WHERE flag = '1' ORDER BY id");
                                 
                             @endphp
                             @forelse($q as $r)
