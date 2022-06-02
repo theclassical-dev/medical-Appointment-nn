@@ -403,12 +403,8 @@ class AdminController extends Controller
         return view('admin/analysis');
     }
 
-    public function notification(Request $request){
+    public function msgrecord(Request $request){
 
-
-        // $flag =  DB::select("SELECT * FROM attendances WHERE flag = 1 ORDER BY id");
-        // $reminder =  DB::select("SELECT * FROM attendances WHERE reminder = 1 AND reminder = 2 ORDER BY id");
-        
-        return view('admin/notification');
+        return view('admin/msgrecord');
     }
 }
