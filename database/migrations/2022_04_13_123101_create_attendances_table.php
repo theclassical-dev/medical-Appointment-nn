@@ -25,6 +25,9 @@ class CreateAttendancesTable extends Migration
             $table->string('status')->nullable();
             $table->integer('flag')->default(0);
             $table->integer('reminder')->default(0);
+            $table->string('flag_date')->nullable();
+            $table->string('r1_date')->nullable();
+            $table->string('r2_date')->nullable();
             $table->timestamps();
         });
     }
