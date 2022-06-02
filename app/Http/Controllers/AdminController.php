@@ -406,9 +406,9 @@ class AdminController extends Controller
     public function notification(Request $request){
 
 
-        $flag =  DB::select("SELECT * FROM attendances WHERE flag = 1 ORDER BY id");
-        $reminder =  DB::select("SELECT * FROM attendances WHERE reminder = 1 AND reminder = 2 ORDER BY id");
+        // $flag =  DB::select("SELECT * FROM attendances WHERE flag = 1 ORDER BY id");
+        // $reminder =  DB::select("SELECT * FROM attendances WHERE reminder = 1 AND reminder = 2 ORDER BY id");
         
-        return view('admin/notification', compact('flag', 'reminder'));
+        return view('admin/notification');
     }
 }
