@@ -31,6 +31,16 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
+         // active
+         $total =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' ORDER BY id");
+         $aMale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' AND Sex = 'M' ORDER BY id");
+         $aFemale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' AND Sex = 'F' ORDER BY id");
+         
+         //inactive
+         $inactive =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' ORDER BY id");
+         $inMale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' AND Sex = 'M' ORDER BY id");
+         $inFemale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' AND Sex = 'F' ORDER BY id");
+ 
         $r = Attendance::all();
         $c = date('d-m-Y', strtotime($request->date));
 
@@ -146,7 +156,7 @@ class AdminController extends Controller
             }
         }
 
-        return view('admin/dashboard');
+        return view('admin/dashboard', compact('total', 'aMale', 'aFemale', 'inMale', 'inFemale', 'inactive'));
     }
 
     public function attendance(Request $request){
@@ -381,16 +391,7 @@ class AdminController extends Controller
 
     public function analysis(Request $request){
 
-        // active
-        $total =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' ORDER BY id");
-        $aMale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' AND Sex = 'M' ORDER BY id");
-        $aFemale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'Active' AND Sex = 'F' ORDER BY id");
-        
-        //inactive
-        $inactive =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' ORDER BY id");
-        $inMale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' AND Sex = 'M' ORDER BY id");
-        $inFemale =  DB::select("SELECT * FROM records WHERE currentARTStatus = 'LTFU' AND Sex = 'F' ORDER BY id");
-
-        return view('admin/analysis', compact('total', 'aMale', 'aFemale', 'inMale', 'inFemale', 'inactive'));
+       
+        return view('admin/analysis');
     }
 }
