@@ -403,8 +403,8 @@ class AdminController extends Controller
         return view('admin/analysis');
     }
 
-    public function note(Request $request){
+    public function msgrecord(Request $request){
 
-        return view('admin/note');
+        return view('admin/msgrecord');
     }
 }

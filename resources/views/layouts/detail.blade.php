@@ -114,7 +114,7 @@
                         <span>ATTENDANCE</span></a>
 					</li>
 					<li>
-						<a href="{{ route('admin.note') }}" title="">
+						<a href="{{ route('admin.msgrecord') }}" title="">
                        <i class="fa fa-dashboard"><span class="path1"></span><span class="path2"></span></i>
                         <span>NOTIFICATIONS</span></a>
 					</li>
