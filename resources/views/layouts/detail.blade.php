@@ -114,6 +114,11 @@
                         <span>ATTENDANCE</span></a>
 					</li>
 					<li>
+						<a href="{{ route('admin.notification') }}" title="">
+                       <i class="fa fa-dashboard"><span class="path1"></span><span class="path2"></span></i>
+                        <span>NOTIFICATIONS</span></a>
+					</li>
+					<li>
 						<a href="{{ route('admin.upload') }}" title="">
                        <i class="fa fa-dashboard"><span class="path1"></span><span class="path2"></span></i>
                         <span>UPLOAD RECORDS</span>  </a>

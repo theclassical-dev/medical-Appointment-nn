@@ -53,6 +53,7 @@ class AdminController extends Controller
                 if($reminder){
 
                     $ind['reminder'] = 1;
+                    $ind['r1_date'] = date();
                     $reminder->update($ind);
 
                     $to = '+2349121356634';
@@ -89,6 +90,7 @@ class AdminController extends Controller
                 if($reminder){
 
                     $ind['reminder'] = 2;
+                    $ind['r2_date'] = date();
                     $reminder->update($ind);
 
                     $to = '+2349121356634';
@@ -128,6 +130,7 @@ class AdminController extends Controller
 
                 if($flag){
                     $ind['flag'] = 1;
+                    $ind['flag_date'] = date();
                     $flag->update($ind);
 
                     $to = '+2349121356634';
@@ -172,6 +175,7 @@ class AdminController extends Controller
                 if($reminder){
 
                     $ind['reminder'] = 1;
+                    $ind['r1_date'] = date();
                     $reminder->update($ind);
 
                     $to = '+2349121356634';
@@ -208,6 +212,8 @@ class AdminController extends Controller
                 if($reminder){
 
                     $ind['reminder'] = 2;
+                    $ind['r2_date'] = date();
+
                     $reminder->update($ind);
 
                     $to = '+2349121356634';
@@ -247,6 +253,8 @@ class AdminController extends Controller
 
                 if($flag){
                     $ind['flag'] = 1;
+                    $ind['flag_date'] = date();
+
                     $flag->update($ind);
 
                     $to = '+2349121356634';
@@ -393,5 +401,14 @@ class AdminController extends Controller
 
        
         return view('admin/analysis');
+    }
+
+    public function notification(Request $request){
+
+
+        $flag =  DB::select("SELECT * FROM attendances WHERE flag = 1 ORDER BY id");
+        $reminder =  DB::select("SELECT * FROM attendances WHERE reminder = 1 AND reminder = 2 ORDER BY id");
+        
+        return view('admin/notification', compact('flag', 'reminder'));
     }
 }

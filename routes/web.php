@@ -25,7 +25,8 @@ Route::any('/send', [SmsController::class,'index'])->name('send');
 Route::prefix('admin')->group(function(){
     Route::any('/', [AdminController::class,'index'])->name('admin.dashboard');
     Route::any('/attendance', [AdminController::class,'attendance'])->name('admin.attendance');
-    Route::any('/Data-Analysis', [AdminController::class,'analysis'])->name('admin.analysis');
+    Route::any('/Records', [AdminController::class,'analysis'])->name('admin.analysis');
+    Route::any('/message-notifications', [AdminController::class,'notification'])->name('admin.notification');
     Route::any('/upload', [AdminController::class,'upload'])->name('admin.upload');
     Route::any('/register', [AdminRegController::class,'register'])->name('admin.reg');
 });
