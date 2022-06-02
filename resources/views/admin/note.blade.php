@@ -61,9 +61,8 @@
 		</div>
 	</div>
 </div>
-<div class="row">
+{{-- <div class="row">
 	<div class="col-12">
-		@include("layouts.msg")
 		<div class="box">
 			<div class="box-header with-border">
 				<h3 class="box-title">Missed Appointments</h3>
@@ -114,5 +113,5 @@
 
 		</div>
 	</div>
-</div>
+</div> --}}
 @endsection
