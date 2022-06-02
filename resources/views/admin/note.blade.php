@@ -2,7 +2,7 @@
 
 @section("content")
     
-<div class="row">
+{{-- <div class="row">
 	<div class="col-12">
 		@include("layouts.msg")
 		<div class="box">
@@ -26,7 +26,6 @@
 						<tbody>
 							@php
                                 $q = DB::select("SELECT * FROM attendances WHERE reminder = 1 OR reminder = 2 ORDER BY id");
-                                
                             @endphp
                             @forelse($q as $r)
 	                            @php
@@ -60,7 +59,7 @@
 
 		</div>
 	</div>
-</div>
+</div> --}}
 {{-- <div class="row">
 	<div class="col-12">
 		<div class="box">
