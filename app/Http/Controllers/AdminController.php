@@ -405,6 +405,6 @@ class AdminController extends Controller
 
     public function msgrecord(Request $request){
 
-        return view('admin/msgrecord');
+        return view('admin/note');
     }
 }
