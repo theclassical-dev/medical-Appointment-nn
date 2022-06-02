@@ -185,6 +185,13 @@
 	<script src="{{asset("js/pages/dashboard2.js")}}"></script>
 	{{-- <script src="{{asset("js/pages/data-table.js")}}"></script> --}}
 
+	{{--  --}}
+	<script src="{{asset("js/vendors.min.js")}}"></script>
+	<script src="{{asset("js/pages/chat-popup.js")}}"></script>
+	<script src="{{asset("assets/vendor_components/Flot/jquery.flot.js")}}"></script>
+	<script src="{{asset("js/pages/widget-flot-charts.js")}}"></script>
+	<script src="{{asset("assets/vendor_components/Flot/jquery.flot.categories.js")}}"></script>
+
 </body>
 </html>
 
