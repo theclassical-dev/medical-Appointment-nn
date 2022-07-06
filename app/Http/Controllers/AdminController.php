@@ -394,6 +394,17 @@ class AdminController extends Controller
 
         }
 
+        if(isset($_POST['delete'])){
+
+            $del = Record::truncate();
+
+            if($del){
+                return back()->with('success', 'Record Successufully Deleted');
+            }
+            return back()->with('error', 'Error');
+
+        }
+
         return view('admin/upload');
     }
 

@@ -20,10 +20,10 @@
     });
 </script>
 <div class="row">
-	<div class="col-8 offset-2">
+	<div class="col-md-8 offset-2">
 		@include("layouts.msg")
 	</div>
-	<div class="col-6">
+	<div class="col-md-6">
 	  <div class="box">
 		<div class="box-header">
 			<h4 class="box-title">Basic file inputs</h4>  
@@ -46,6 +46,13 @@
 				</div> 
 			</form>
 			 
+		</div>
+		<div class="box-footer">
+			<h4 class="box-title">Delete Records</h4>  
+			<form action="" method="POST">
+				@csrf
+				<button name="delete" type="submit" class="btn btn-warning form-control" data-dismiss="modal">Delete</button>
+			</form>
 		</div>
 		<!-- /.box-body -->
 	  </div>
